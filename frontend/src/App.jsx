@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
+import Navbar from "./components/layout/Navbar.jsx";
+
 
 function App() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <Button>FootballVerse</Button>
-    </div>
+    <>
+      <Navbar/>
+    </>
   );
 }
 
