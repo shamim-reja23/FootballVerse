@@ -3,7 +3,6 @@ import Container from './Container.jsx'
 import { Link } from 'react-router-dom'
 import { Button } from '../ui/button.jsx';
 import { CircleUserRound, Menu, Moon, Search } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet.jsx';
 
 
 const navItems = [
