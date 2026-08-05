@@ -7,7 +7,7 @@ function Footer() {
         <div className="text-center md:text-left">
           <Link
             to="/"
-            className="text-2xl font-extrabold text-primary"
+            className="font-heading text-3xl font-extrabold text-primary"
           >
             FootballVerse
           </Link>
