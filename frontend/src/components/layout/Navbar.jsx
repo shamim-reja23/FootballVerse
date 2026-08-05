@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from './Container.jsx'
 import { Link } from 'react-router-dom'
 import { Button } from '../ui/button.jsx';
@@ -13,29 +13,6 @@ const navItems = [
   { label: "Articles", href: "/articles" },
 ];
 
-function MobileNav(){
-  return (
-    <Sheet>
-      <SheetTrigger
-        className="inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground transition-colors md:hidden">
-        <Menu className="size-5" />
-      </SheetTrigger>
-      <SheetContent side='left'>
-        <nav className='flex flex-col gap-6 mt-8 '>
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              to={item.href}
-              className="text-lg font-medium"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-      </SheetContent>
-    </Sheet>
-  );
-}
 
 function Navbar() {
   return (
@@ -56,9 +33,8 @@ function Navbar() {
               ))}
             </nav>
           </div>
-          <div className="flex items-center gap-4">
-            <MobileNav/>
-            
+
+          <div className="flex items-center gap-4">         
             <Button variant='ghost' size='icon'>
               <Search className='size-5'/>
             </Button>
@@ -68,6 +44,8 @@ function Navbar() {
             <Button variant='ghost' size='icon'>
               <CircleUserRound className='size-6 '/>
             </Button>
+
+            
           </div>
         </Container>
     </header>
