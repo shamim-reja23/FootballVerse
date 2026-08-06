@@ -151,36 +151,35 @@ const Home = () => {
     <section className="py-8">
       <Container className="space-y-10">
         {/* Header */}
-        <div className="grid gap-8 lg:grid-cols-12">
-          {/* Matches Header */}
-          <div className="lg:col-span-9 border-b border-border pb-4">
-            <div className="space-y-4">
-              <h1 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-                Matches
-              </h1>
+        <div className="border-b border-border pb-4">
+          <div className="space-y-4">
+            <h1 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
+              Matches
+            </h1>
 
-              <Tabs value={activeTab} onValueChange={setActiveTab}>
-                <TabsList className="h-auto gap-2 rounded-full bg-transparent p-0">
-                  <TabsTrigger value="live" className="rounded-full px-5 py-2">
-                    <span className="mr-2 h-2 w-2 rounded-full bg-live animate-live" />
-                    LIVE
-                  </TabsTrigger>
+            <Tabs value={activeTab} onValueChange={setActiveTab}>
+              <TabsList className="h-auto gap-2 rounded-full bg-transparent p-0">
+                <TabsTrigger value="live" className="rounded-full px-5 py-2">
+                  <span className="mr-2 h-2 w-2 rounded-full bg-live animate-live" />
+                  LIVE
+                </TabsTrigger>
 
-                  <TabsTrigger value="today" className="rounded-full px-5 py-2">
-                    TODAY
-                  </TabsTrigger>
+                <TabsTrigger value="today" className="rounded-full px-5 py-2">
+                  TODAY
+                </TabsTrigger>
 
-                  <TabsTrigger
-                    value="upcoming"
-                    className="rounded-full px-5 py-2"
-                  >
-                    UPCOMING
-                  </TabsTrigger>
-                </TabsList>
-              </Tabs>
-            </div>
+                <TabsTrigger value="upcoming" className="rounded-full px-5 py-2">
+                  UPCOMING
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
           </div>
-          <div className="space-y-4 lg:col-span-9">
+        </div>
+
+        {/* Content */}
+        <div className="grid gap-8 lg:grid-cols-12">
+          {/* Matches */}
+          <div className="lg:col-span-9 space-y-4">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
               {displayMatches.map((match) => (
                 <MatchCard key={match.id} match={match} />
@@ -195,16 +194,12 @@ const Home = () => {
               <ArrowRight size={16} />
             </Link>
           </div>
-        </div>
 
-        
-          
-
-          {/* League List */}
-          <aside className="space-y-3 lg:col-span-3">
+          {/* Sidebar */}
+          <aside className="lg:col-span-3">
             <LeagueList />
           </aside>
-
+        </div>
       </Container>
     </section>
   );

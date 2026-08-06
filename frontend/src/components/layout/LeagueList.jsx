@@ -37,15 +37,15 @@ const leagues = [
 
 function LeagueList() {
   return (
-    <div className="space-y-3">
-      <h2 className="text-xl font-bold">Competitions</h2>
+    <div className="space-y-3 bg-white/70 rounded-xl border p-4">
+      <h2 className="text-xl font-bold">Top Competitions</h2>
 
       <div className="space-y-2">
         {leagues.map((league) => (
           <Link
             key={league.id}
             to={`/competitions/${league.id}`}
-            className="group flex items-center justify-between rounded-lg border p-3 transition-all hover:border-primary hover:bg-accent"
+            className="group flex items-center justify-between rounded-lg p-3 transition-all  hover:bg-accent"
           >
             <div className="flex items-center gap-3">
               <img
