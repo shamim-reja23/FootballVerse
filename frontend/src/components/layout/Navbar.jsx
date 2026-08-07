@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from './Container.jsx'
 import { Link } from 'react-router-dom'
 import { Button } from '../ui/button.jsx';
-import { CircleUserRound, Menu, Moon, Search } from 'lucide-react';
+import { CircleUserRound, Moon, Search } from 'lucide-react';
 
 
 const navItems = [
@@ -14,8 +14,22 @@ const navItems = [
 
 
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return() => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
+    <header className={`sticky top-0 z-50 w-full border-b border-border bg-background ${scrolled ? "shadow-md" : "" }`}>
         <Container className='flex h-16 items-center justify-between'>
           <div className='flex items-center gap-8'>
             <Link to="/" className='font-heading text-3xl font-extrabold'>FootballVerse</Link>

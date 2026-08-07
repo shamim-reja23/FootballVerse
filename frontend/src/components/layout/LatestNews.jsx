@@ -6,7 +6,7 @@ export default function LatestNews({ news }) {
   return (
     <aside className="space-y-5">
       <div className="flex items-center justify-between border-b pb-3">
-        <h3 className="text-xl font-bold font-heading">Latest News</h3>
+        <h3 className="text-xl font-extrabold font-heading">Latest News</h3>
 
         <Link
           to="/news"
