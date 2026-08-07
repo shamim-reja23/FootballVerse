@@ -1,14 +1,15 @@
 export default function NewsCard({ news }) {
     return (
       <div className="group flex cursor-pointer gap-4">
-        <img
-          src={news.image}
-          alt={news.title}
-          className="h-20 w-20 rounded-lg object-cover transition group-hover:scale-105"
-        />
-  
+        <div className="w-20 h-20 shrink-0 rounded-lg overflow-hidden">
+          <img
+            src={news.image}
+            alt={news.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
         <div className="flex flex-col justify-between">
-          <h4 className="line-clamp-2 font-semibold transition group-hover:text-primary">
+          <h4 className="line-clamp-2 font-heading font-semibold leading-snug ">
             {news.title}
           </h4>
   

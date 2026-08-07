@@ -6,11 +6,11 @@ export default function LatestNews({ news }) {
   return (
     <aside className="space-y-5">
       <div className="flex items-center justify-between border-b pb-3">
-        <h3 className="text-xl font-bold">Latest News</h3>
+        <h3 className="text-xl font-bold font-heading">Latest News</h3>
 
         <Link
           to="/news"
-          className="flex items-center gap-1 text-sm font-medium hover:gap-2"
+          className="flex items-center gap-1 text-sm font-medium hover:gap-2 transition-all"
         >
           View All
           <ArrowRight size={16} />
