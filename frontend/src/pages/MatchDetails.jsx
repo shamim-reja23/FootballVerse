@@ -1,6 +1,28 @@
 import Container from '@/components/layout/Container'
-import { CalendarDays, MapPin } from 'lucide-react'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { CalendarDays, MapPin, Users } from 'lucide-react'
 import React from 'react'
+
+
+const matchTabClass = `
+  rounded-none
+  border-b-2
+  px-1
+  pb-3
+  pt-1
+  text-sm
+  font-semibold
+  text-muted-foreground
+  cursor-pointer
+  hover:bg-transparent
+  data-active:border-b-primary
+  data-active:bg-transparent
+  data-active:text-primary
+  data-active:font-bold
+  data-active:hover:bg-transparent
+  data-active:hover:text-primary
+  data-active:!shadow-none
+`;
 
 const MatchDetails = () => {
   return (
@@ -18,7 +40,7 @@ const MatchDetails = () => {
                             <h1 className="font-heading text-2xl font-bold uppercase tracking-tight">
                                 Arsenal
                             </h1>
-                            <p className="text-sm font-semibold text-primary/80">
+                            <p className="text-sm font-medium text-primary/80">
                                 Premier League · Home
                             </p>
                         </div>
@@ -46,14 +68,14 @@ const MatchDetails = () => {
                             <h1 className="font-heading text-2xl font-bold uppercase tracking-tight">
                                 Chelsea
                             </h1>
-                            <p class="text-sm font-medium text-primary/80">
+                            <p className="text-sm font-medium text-primary/80">
                                 Premier League · Away
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border flex flex-wrap justify-center gap-x-16 gap-y-2">
+                <div className="mt-8 pt-4 border-t  flex flex-wrap justify-center gap-x-16 gap-y-2">
                     <div className="flex items-center gap-1 text-primary/80">
                         <MapPin className='size-4'/>
                         <span className="text-sm ">Emirates Stadium, London</span>
@@ -63,11 +85,148 @@ const MatchDetails = () => {
                         <span className="text-sm">April 23, 2024</span>
                     </div>
                     <div className="flex items-center gap-1 text-primary/80">
-                        <span class="material-symbols-outlined text-[18px]">groups</span>
-                        <span class="text-label-sm">Attendance: 60,241</span>
+                        <Users className='size-4'/>
+                        <span className="text-sm">Attendance: 60,241</span>
                     </div>
                 </div>
             </section>
+
+            <Tabs defaultValue="overview" className="gap-8 border-b border-border">
+                <TabsList className="h-auto justify-start gap-8 rounded-none bg-transparent p-0">
+                    <TabsTrigger value="overview" className={matchTabClass}>
+                        Overview
+                    </TabsTrigger>
+
+                    <TabsTrigger value="stats" className={matchTabClass}>
+                        Stats
+                    </TabsTrigger>
+
+                    <TabsTrigger value="lineups" className={matchTabClass}>
+                        Lineups
+                    </TabsTrigger>
+
+                    <TabsTrigger value="timeline" className={matchTabClass}>
+                        Timeline
+                    </TabsTrigger>
+
+                    <TabsTrigger value="h2h" className={matchTabClass}>
+                        H2H
+                    </TabsTrigger>
+                </TabsList>
+            </Tabs>
+
+            <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 items-start'>
+                <div className='lg:col-span-8 space-y-8'>
+                    <div className="bg-white border rounded-xl p-8">
+                        <h2 className="font-heading text-xl font-extrabold mb-8">
+                            Match Statistics
+                        </h2>
+                        <div className="space-y-8">
+                            <div>
+                                <div className="flex justify-between items-center mb-2">
+                                    <span className="text-sm font-bold">54%</span>
+                                    <span className="text-sm font-medium uppercase tracking-wider">Possession</span>
+                                    <span className="text-sm font-bold">46%</span>
+                                </div>
+                                <div className="flex h-1.5 w-full rounded-full overflow-hidden bg-primary/30">
+                                    <div className="h-full bg-primary w-[54%]" ></div>
+                                    <div className="h-full w-[46%]" ></div>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                <div className="flex justify-between items-center mb-2">
+                                    <span className="text-sm font-bold">14</span>
+                                    <span className="text-sm font-medium uppercase tracking-wider"
+                                    >Total Shots</span>
+                                    <span className="text-sm font-bold">9</span>
+                                </div>
+                                <div
+                                    className="flex h-1.5 w-full bg-primary/30 rounded-full overflow-hidden"
+                                >
+                                    <div className="h-full bg-primary w-[61%]" ></div>
+                                    <div
+                                    className="h-full bg-outline-variant w-[39%]"
+                                    
+                                    ></div>
+                                </div>
+                                </div>
+                                <div>
+                                <div className="flex justify-between items-center mb-stack-sm">
+                                    <span className="text-label-sm font-bold">6</span>
+                                    <span
+                                    className="text-stats-label text-on-surface-variant uppercase tracking-wider"
+                                    >Shots on Target</span>
+                                    <span className="text-label-sm font-bold">4</span>
+                                </div>
+                                <div
+                                    className="flex h-1.5 w-full bg-surface-container rounded-full overflow-hidden"
+                                >
+                                    <div className="h-full bg-primary w-[60%]" ></div>
+                                    <div
+                                    className="h-full bg-outline-variant w-[40%]"
+                                    
+                                    ></div>
+                                </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="flex justify-between items-center mb-stack-sm">
+                                <span className="text-label-sm font-bold text-[#22C55E]"
+                                    >2.14</span>
+                                <span
+                                    className="text-stats-label text-on-surface-variant uppercase tracking-wider"
+                                    >Expected Goals (xG)</span                                >
+                                <span className="text-label-sm font-bold">1.28</span>
+                                </div>
+                                <div
+                                className="flex h-1.5 w-full bg-surface-container rounded-full overflow-hidden"
+                                >
+                                <div className="h-full bg-primary w-[62.5%]" ></div>
+                                <div
+                                    className="h-full bg-outline-variant w-[37.2%]"
+                                    
+                                ></div>
+                                </div>
+                            </div>
+                            <div
+                                className="grid grid-cols-1 md:grid-cols-3 gap-stack-lg pt-stack-sm"
+                            >
+                                <div
+                                className="text-center py-stack-sm bg-surface-container-low rounded-lg"
+                                >
+                                <p
+                                    className="text-stats-label text-on-surface-variant uppercase mb-1"
+                                >
+                                    Corners
+                                </p>
+                                <p className="text-headline-md">7 - 3</p>
+                                </div>
+                                <div
+                                className="text-center py-stack-sm bg-surface-container-low rounded-lg"
+                                >
+                                <p
+                                    className="text-stats-label text-on-surface-variant uppercase mb-1"
+                                >
+                                    Pass Accuracy
+                                </p>
+                                <p className="text-headline-md">88% - 82%</p>
+                                </div>
+                                <div
+                                className="text-center py-stack-sm bg-surface-container-low rounded-lg"
+                                >
+                                <p
+                                    className="text-stats-label text-on-surface-variant uppercase mb-1"
+                                >
+                                    Fouls
+                                </p>
+                                <p className="text-headline-md">11 - 14</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Container>
     </div>
   )
