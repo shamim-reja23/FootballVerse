@@ -135,95 +135,222 @@ const MatchDetails = () => {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div>
-                                <div className="flex justify-between items-center mb-2">
-                                    <span className="text-sm font-bold">14</span>
-                                    <span className="text-sm font-medium uppercase tracking-wider"
-                                    >Total Shots</span>
-                                    <span className="text-sm font-bold">9</span>
-                                </div>
-                                <div
-                                    className="flex h-1.5 w-full bg-primary/30 rounded-full overflow-hidden"
-                                >
-                                    <div className="h-full bg-primary w-[61%]" ></div>
-                                    <div
-                                    className="h-full bg-outline-variant w-[39%]"
-                                    
-                                    ></div>
-                                </div>
+                                    <div className="flex justify-between items-center mb-2">
+                                        <span className="text-sm font-bold">14</span>
+                                        <span className="text-sm font-medium uppercase tracking-wider"
+                                        >Total Shots</span>
+                                        <span className="text-sm font-bold">9</span>
+                                    </div>
+                                    <div className="flex h-1.5 w-full bg-primary/30 rounded-full overflow-hidden">
+                                        <div className="h-full bg-primary w-[61%]" ></div>
+                                        <div className="h-full w-[39%]"></div>
+                                    </div>
                                 </div>
                                 <div>
-                                <div className="flex justify-between items-center mb-stack-sm">
-                                    <span className="text-label-sm font-bold">6</span>
-                                    <span
-                                    className="text-stats-label text-on-surface-variant uppercase tracking-wider"
-                                    >Shots on Target</span>
-                                    <span className="text-label-sm font-bold">4</span>
-                                </div>
-                                <div
-                                    className="flex h-1.5 w-full bg-surface-container rounded-full overflow-hidden"
-                                >
-                                    <div className="h-full bg-primary w-[60%]" ></div>
-                                    <div
-                                    className="h-full bg-outline-variant w-[40%]"
-                                    
-                                    ></div>
-                                </div>
+                                    <div className="flex justify-between items-center mb-2">
+                                        <span className="text-sm font-bold">6</span>
+                                        <span className="text-sm font-medium uppercase tracking-wider">Shots on Target</span>
+                                        <span className="text-sm font-bold">4</span>
+                                    </div>
+                                    <div className="flex h-1.5 w-full bg-primary/30 rounded-full overflow-hidden">
+                                        <div className="h-full bg-primary w-[60%]" ></div>
+                                        <div className="h-full w-[40%]"></div>
+                                    </div>
                                 </div>
                             </div>
                             <div>
-                                <div className="flex justify-between items-center mb-stack-sm">
-                                <span className="text-label-sm font-bold text-[#22C55E]"
-                                    >2.14</span>
-                                <span
-                                    className="text-stats-label text-on-surface-variant uppercase tracking-wider"
-                                    >Expected Goals (xG)</span                                >
-                                <span className="text-label-sm font-bold">1.28</span>
-                                </div>
-                                <div
-                                className="flex h-1.5 w-full bg-surface-container rounded-full overflow-hidden"
-                                >
-                                <div className="h-full bg-primary w-[62.5%]" ></div>
-                                <div
-                                    className="h-full bg-outline-variant w-[37.2%]"
-                                    
-                                ></div>
+                                <div className="flex justify-between items-center mb-2">
+                                    <span className="text-sm font-bold text-live">2.14</span>
+                                    <span className="text-sm font-medium uppercase tracking-wider">Expected Goals (xG)</span>
+                                    <span className="text-sm font-bold">1.28</span>
+                                    </div>
+                                <div className="flex h-1.5 w-full bg-primary/30 rounded-full overflow-hidden">
+                                    <div className="h-full bg-primary w-[62.5%]" ></div>
+                                    <div className="h-full w-[37.2%]"></div>
                                 </div>
                             </div>
-                            <div
-                                className="grid grid-cols-1 md:grid-cols-3 gap-stack-lg pt-stack-sm"
-                            >
-                                <div
-                                className="text-center py-stack-sm bg-surface-container-low rounded-lg"
-                                >
-                                <p
-                                    className="text-stats-label text-on-surface-variant uppercase mb-1"
-                                >
-                                    Corners
-                                </p>
-                                <p className="text-headline-md">7 - 3</p>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                                <div className="text-center py-2 bg-card rounded-lg">
+                                    <p className="text-sm font-medium uppercase mb-1">
+                                        Corners
+                                    </p>
+                                    <p className="text-heading font-extrabold text-2xl">7 - 3</p>
                                 </div>
-                                <div
-                                className="text-center py-stack-sm bg-surface-container-low rounded-lg"
-                                >
-                                <p
-                                    className="text-stats-label text-on-surface-variant uppercase mb-1"
-                                >
-                                    Pass Accuracy
-                                </p>
-                                <p className="text-headline-md">88% - 82%</p>
+                                <div className="text-center py-2 bg-card rounded-lg">
+                                    <p className="text-sm font-medium uppercase mb-1">
+                                        Pass Accuracy
+                                    </p>
+                                    <p className="text-heading font-extrabold text-2xl">88% - 82%</p>
                                 </div>
-                                <div
-                                className="text-center py-stack-sm bg-surface-container-low rounded-lg"
-                                >
-                                <p
-                                    className="text-stats-label text-on-surface-variant uppercase mb-1"
-                                >
-                                    Fouls
-                                </p>
-                                <p className="text-headline-md">11 - 14</p>
+                                <div className="text-center py-2 bg-card rounded-lg">
+                                    <p className="text-sm font-medium uppercase mb-1">
+                                        Fouls
+                                    </p>
+                                    <p className="text-heading font-extrabold text-2xl">11 - 14</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="bg-white border rounded-xl overflow-hidden">
+                        <div className="p-4 border-b flex justify-between items-center">
+                            <h2 className="font-heading text-lg font-bold">
+                                Starting Lineups
+                            </h2>
+                            <div className="flex gap-4">
+                                <span className="text-sm font-medium">Arsenal 4-3-3</span>
+                                <span className="text-accent-foreground">|</span>
+                                <span className="text-sm font-medium">Chelsea 4-3-3</span>
+                            </div>
+                        </div>
+                        <div class="relative aspect-4/3 w-full bg-[linear-gradient(180deg,#22c55e_0%,#22c55e_100%)] p-6 overflow-hidden">
+                            <div className="absolute inset-6 border border-white/50 pointer-events-none"></div>
+                            <div className="absolute top-1/2 left-6 right-6 h-px bg-white/50 -translate-y-1/2"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-2 border-white/50 rounded-full"
+                        ></div>
+
+                        <div
+                            class="absolute inset-0 flex flex-col justify-start pt-12 items-center gap-y-12"
+                        >
+
+                            <div class="flex justify-center gap-16 md:gap-24">
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-primary text-primary font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                11
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Martinelli</span
+                                >
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-primary text-primary font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                29
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Havertz</span
+                                >
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-primary text-primary font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                7
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Saka</span
+                                >
+                            </div>
+                            </div>
+
+                            <div class="flex justify-center gap-12 md:gap-20">
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-primary text-primary font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                41
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Rice</span
+                                >
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-primary text-primary font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                5
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Partey</span
+                                >
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-primary text-primary font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                8
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Ødegaard</span
+                                >
+                            </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute inset-0 flex flex-col justify-end pb-12 items-center gap-y-12"
+                        >
+
+                            <div class="flex justify-center gap-12 md:gap-20">
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center border-2 border-white text-white font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                23
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Gallagher</span
+                                >
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center border-2 border-white text-white font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                25
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Caicedo</span
+                                >
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center border-2 border-white text-white font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                20
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Palmer</span
+                                >
+                            </div>
+                            </div>
+
+                            <div class="flex justify-center gap-16 md:gap-24">
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center border-2 border-white text-white font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                10
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Mudryk</span
+                                >
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center border-2 border-white text-white font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                15
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Jackson</span
+                                >
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center border-2 border-white text-white font-bold text-label-sm mb-1 shadow-lg"
+                                >
+                                11
+                                </div>
+                                <span class="text-white text-[10px] font-bold uppercase"
+                                >Madueke</span
+                                >
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                   
                     </div>
                 </div>
             </div>
