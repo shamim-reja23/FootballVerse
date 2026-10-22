@@ -338,7 +338,7 @@ const MatchDetails = () => {
             <h2 class="font-headline-md text-body-lg font-bold mb-stack-lg">
               Match Timeline
             </h2>
-            <div class="relative space-y-stack-lg before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant">
+            <div class="relative space-y-stack-lg before:absolute before:left-2.75 before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant">
               <div class="relative pl-10">
                 <div class="absolute left-0 top-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center z-10">
                   <span class="material-symbols-outlined text-white text-[14px]">

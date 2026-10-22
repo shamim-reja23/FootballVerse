@@ -10,7 +10,7 @@ import MatchDetails from './pages/MatchDetails.jsx';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen text-sm text-primary flex flex-col justify-between antialiased">
       <Navbar/>
       <main className="flex-1 pb-20 md:pb-0">
         <Routes>
