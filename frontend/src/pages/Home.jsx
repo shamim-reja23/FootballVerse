@@ -13,6 +13,7 @@ import {
   CalendarDays,
   ChevronLeft,
   ChevronRight,
+  Star,
   Trophy,
 } from "lucide-react";
 import React, { useState } from "react";
@@ -408,12 +409,9 @@ const Home = () => {
               <div className="bg-white rounded-xl p-5 border border-slate-200 shadow-xs">
                 <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
                   <div className="flex items-center gap-2">
-                    <span
-                      className="material-symbols-outlined text-amber-500 text-[18px]"
-                      //style="font-variation-settings: 'FILL' 1"
-                    >
-                      star
-                    </span>
+                 
+                      <Star className="text-amber-500 size-4 [font-variational-settings:'FILL'_1]"/>
+
                     <span className="font-label-caps text-[12px] uppercase text-[#0F172A] tracking-wider font-extrabold">
                       Followed Teams
                     </span>
