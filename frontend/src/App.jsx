@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="min-h-screen text-sm text-primary flex flex-col justify-between antialiased">
       <Navbar/>
-      <main className="flex-1 pb-20 md:pb-0">
+      <main className="w-full pt-16 bg-background min-h-screen">
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/matches/matchdetails' element={<MatchDetails/>} />

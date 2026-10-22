@@ -15,7 +15,7 @@ const tabs = [
     icon: House,
   },
   {
-    label: "Matches",
+    label: "Competition",
     to: "/matches",
     icon: Trophy,
   },
@@ -25,9 +25,9 @@ const tabs = [
     icon: Newspaper,
   },
   {
-    label: "Articles",
-    to: "/articles",
-    icon: BookOpen,
+    label: "Transfers",
+    to: "/transfer",
+    icon: Newspaper,
   },
   {
     label: "Profile",
