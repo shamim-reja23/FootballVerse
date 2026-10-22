@@ -1,11 +1,13 @@
 import ArticleCard from "@/components/layout/ArticleCard.jsx";
 import Container from "@/components/layout/Container.jsx";
+import DateSelector from "@/components/layout/DateSelector";
 import FeaturedArticle from "@/components/layout/FeaturedArticle.jsx";
 import LatestNews from "@/components/layout/LatestNews";
 import LeagueList from "@/components/layout/LeagueList";
 import MatchCard from "@/components/layout/MatchCard";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs.jsx";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -353,7 +355,28 @@ const Home = () => {
   ).length;
 
   return (
-    <div className="py-8">
+    <div className="flex flex-col w-full">
+      <div className="w-full bg-white sticky top-16 z-40 border-b border-slate-200 shadow-xs">
+        <Container className="py-2 flex items-center justify-between gap-3">
+          <Button variant="ghost" size="icon"
+            className="p-1.5 rounded-lg border border-slate-200 text-slate-500 hover:text-primary transition-colors flex"
+          >
+            <ChevronLeft className="size-5"/>
+          </Button>
+          <DateSelector/>
+          <Button variant="ghost" size="icon"
+            className="p-1.5 rounded-lg border border-slate-200 text-slate-500 hover:text-primary transition-colors flex"
+          >
+            <ChevronRight className="size-5"/>
+          </Button>
+
+          <Button variant="ghost" size="icon"
+          className="hidden sm:inline-flex  gap-1.5 px-3 py-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 transition-colors font-semibold shadow-xs">
+            <CalendarDays className="size-5 text-[#059669]"/>
+          </Button>
+        </Container>
+      </div>
+      
       <Container className="space-y-12">
         <section className="space-y-8">
           <div className="border-b border-border pb-4">
