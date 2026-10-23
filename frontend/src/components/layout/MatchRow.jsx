@@ -19,7 +19,7 @@ function MatchRow({ match, onToggleFavorite }) {
           }`}
         >
           <span
-            className={`material-symbols-outlined text-[18px] ${
+            className={`material-symbols-outlined text-lg! ${
               match.isFavorite
                 ? "[font-variation-settings:'FILL'_1]"
                 : ""
