@@ -1,4 +1,3 @@
-import MatchRow from "./MatchRow";
 import LeagueMatchGroup from "./LeagueMatchGroup";
 
 function MatchList({ matches, onToggleFavorite }) {

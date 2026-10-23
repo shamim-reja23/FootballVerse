@@ -1,12 +1,15 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import ArticleCard from "@/components/layout/ArticleCard.jsx";
 import Container from "@/components/layout/Container.jsx";
 import DateSelector from "@/components/layout/DateSelector";
 import FeaturedArticle from "@/components/layout/FeaturedArticle.jsx";
 import LatestNews from "@/components/layout/LatestNews";
-import LeagueList from "@/components/layout/LeagueList";
-import MatchCard from "@/components/layout/MatchCard";
 import TopLeagues from "@/components/layout/TopLeagues";
 import MatchFilters from "@/components/layout/MatchFilter";
+import MatchList from "@/components/layout/MatchList";
+
 import { Button } from "@/components/ui/button";
 
 import {
@@ -19,10 +22,7 @@ import {
   Star,
   Trophy,
 } from "lucide-react";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { match } from "assert";
-import MatchList from "@/components/layout/MatchList";
+
 
 
 export const matches = [
@@ -569,247 +569,11 @@ const Home = () => {
 
               <div className="flex flex-col gap-3">
 
-                {/* <MatchList
+                <MatchList
                   matches={filteredMatches}
                   onToggleFavorite={handleToggleFavorite}
-                /> */}
+                />
 
-                <div
-                  class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-xs"
-                >
-                  <div
-                    class="px-space-md py-space-sm bg-slate-50 border-b border-slate-200 flex items-center justify-between"
-                  >
-                    <div class="flex items-center gap-space-sm">
-                      <span class="font-label-caps text-label-caps font-bold"
-                        >🇪🇸</span
-                      >
-                      <span
-                        class="font-body-md text-body-md font-bold text-[#0F172A]"
-                        >La Liga</span
-                      >
-                      <span
-                        class="font-label-caps text-label-caps text-slate-500 font-semibold"
-                        >Matchday 11</span
-                      >
-                    </div>
-                    <span
-                      class="material-symbols-outlined text-slate-400 text-[18px] cursor-pointer hover:text-[#0F172A]"
-                      >chevron_right</span
-                    >
-                  </div>
-                  <div class="flex flex-col divide-y divide-slate-100">
-
-                    <div
-                      class="px-space-md py-space-sm flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-md flex-1">
-                        <button
-                          aria-label="Favorite El Clasico"
-                          class="text-amber-500 hover:text-amber-600 shrink-0"
-                        >
-                          <span
-                            class="material-symbols-outlined text-lg [font-variation-settings: 'FILL'_1]"
-                            
-                            >star</span
-                          >
-                        </button>
-                        <div
-                          class="grid grid-cols-12 items-center flex-1 gap-2"
-                        >
-                          <span
-                            class="col-span-5 text-right font-body-md text-body-md font-bold text-[#0F172A] truncate"
-                            >Real Madrid</span
-                          >
-                          <div
-                            class="col-span-2 flex items-center justify-center gap-1.5 font-tabular-stat text-tabular-stat font-extrabold text-[#059669]"
-                          >
-                            <span>1</span>
-                            <span>-</span>
-                            <span>1</span>
-                          </div>
-                          <span
-                            class="col-span-5 text-left font-body-md text-body-md font-bold text-[#0F172A] truncate"
-                            >Barcelona</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center gap-space-sm shrink-0 ml-space-md"
-                      >
-                        <span
-                          class="hidden md:inline font-label-caps text-label-caps uppercase bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-extrabold border border-blue-200"
-                          >El Clásico</span
-                        >
-                        <div
-                          class="flex items-center gap-1 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded text-[#059669]"
-                        >
-                          <span
-                            class="w-1.5 h-1.5 rounded-full bg-[#00E676] animate-ping"
-                          ></span>
-                          <span
-                            class="font-badge-status text-badge-status font-bold"
-                            >53'</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      class="px-space-md py-space-sm flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-md flex-1">
-                        <button
-                          aria-label="Favorite Atletico vs Sevilla"
-                          class="text-slate-300 hover:text-amber-500 shrink-0"
-                        >
-                          <span class="material-symbols-outlined text-[18px]"
-                            >star</span
-                          >
-                        </button>
-                        <div
-                          class="grid grid-cols-12 items-center flex-1 gap-2"
-                        >
-                          <span
-                            class="col-span-5 text-right font-body-md text-body-md font-medium text-[#0F172A] truncate"
-                            >Atlético Madrid</span
-                          >
-                          <div
-                            class="col-span-2 flex items-center justify-center gap-1.5 font-tabular-stat text-tabular-stat font-bold text-[#0F172A]"
-                          >
-                            <span>2</span>
-                            <span>-</span>
-                            <span>0</span>
-                          </div>
-                          <span
-                            class="col-span-5 text-left font-body-md text-body-md font-medium text-slate-700 truncate"
-                            >Sevilla</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center gap-space-sm shrink-0 ml-space-md"
-                      >
-                        <span
-                          class="font-badge-status text-badge-status px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-bold border border-slate-200"
-                          >FT</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-xs"
-                >
-                  <div
-                    class="px-space-md py-space-sm bg-slate-50 border-b border-slate-200 flex items-center justify-between"
-                  >
-                    <div class="flex items-center gap-space-sm">
-                      <span class="font-label-caps text-label-caps font-bold"
-                        >🇮🇹</span
-                      >
-                      <span
-                        class="font-body-md text-body-md font-bold text-[#0F172A]"
-                        >Serie A</span
-                      >
-                      <span
-                        class="font-label-caps text-label-caps text-slate-500 font-semibold"
-                        >Matchday 9</span
-                      >
-                    </div>
-                    <span
-                      class="material-symbols-outlined text-slate-400 text-[18px] cursor-pointer hover:text-[#0F172A]"
-                      >chevron_right</span
-                    >
-                  </div>
-                  <div class="flex flex-col divide-y divide-slate-100">
-
-                    <div
-                      class="px-space-md py-space-sm flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-md flex-1">
-                        <button
-                          aria-label="Favorite Inter vs Juventus"
-                          class="text-amber-500 hover:text-amber-600 shrink-0"
-                        >
-                          <span
-                            class="material-symbols-outlined text-[18px] [font-variation-settings: 'FILL' 1]"
-                            
-                            >star</span
-                          >
-                        </button>
-                        <div
-                          class="grid grid-cols-12 items-center flex-1 gap-2"
-                        >
-                          <span
-                            class="col-span-5 text-right font-body-md text-body-md font-bold text-[#0F172A] truncate"
-                            >Inter Milan</span
-                          >
-                          <div
-                            class="col-span-2 flex items-center justify-center gap-1.5 font-tabular-stat text-tabular-stat font-extrabold text-[#059669]"
-                          >
-                            <span>1</span>
-                            <span>-</span>
-                            <span>0</span>
-                          </div>
-                          <span
-                            class="col-span-5 text-left font-body-md text-body-md font-medium text-slate-700 truncate"
-                            >Juventus</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center gap-space-sm shrink-0 ml-space-md"
-                      >
-                        <span
-                          class="font-badge-status text-badge-status px-2 py-0.5 rounded bg-emerald-50 border border-emerald-200 text-[#059669] font-extrabold"
-                          >HT</span
-                        >
-                      </div>
-                    </div>
-
-                    <div
-                      class="px-space-md py-space-sm flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-md flex-1">
-                        <button
-                          aria-label="Favorite Milan vs Roma"
-                          class="text-slate-300 hover:text-amber-500 shrink-0"
-                        >
-                          <span class="material-symbols-outlined text-[18px]"
-                            >star</span
-                          >
-                        </button>
-                        <div
-                          class="grid grid-cols-12 items-center flex-1 gap-2"
-                        >
-                          <span
-                            class="col-span-5 text-right font-body-md text-body-md font-medium text-[#0F172A] truncate"
-                            >AC Milan</span
-                          >
-                          <div
-                            class="col-span-2 flex items-center justify-center font-label-caps text-label-caps text-slate-400 font-bold"
-                          >
-                            <span>vs</span>
-                          </div>
-                          <span
-                            class="col-span-5 text-left font-body-md text-body-md font-medium text-[#0F172A] truncate"
-                            >AS Roma</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center gap-space-sm shrink-0 ml-space-md"
-                      >
-                        <span
-                          class="font-badge-status text-badge-status px-2.5 py-0.5 rounded bg-blue-50 text-blue-700 font-semibold border border-blue-100"
-                          >20:45</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
