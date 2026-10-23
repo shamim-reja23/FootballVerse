@@ -8,7 +8,6 @@ import MatchCard from "@/components/layout/MatchCard";
 import TopLeagues from "@/components/layout/TopLeagues";
 import MatchFilters from "@/components/layout/MatchFilter";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 import {
   ArrowRight,
@@ -22,252 +21,74 @@ import {
 } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { match } from "assert";
+import MatchList from "@/components/layout/MatchList";
 
 
-const matches = [
+export const matches = [
   {
     id: 1,
-    competition: "Premier League",
-    competitionLogo: "/premier-league.png",
-
-    homeTeam: {
-      name: "Arsenal",
-      logo: "/arsenal.png",
+    league: {
+      name: "Premier League",
+      country: "England",
+      flag: "🏴",
+      matchday: 10,
     },
-
-    awayTeam: {
-      name: "Chelsea",
-      logo: "/chelsea.png",
-    },
-
+    homeTeam: "Arsenal",
+    awayTeam: "Chelsea",
     homeScore: 2,
     awayScore: 1,
-
-    status: "LIVE",
-    minute: 72,
+    status: "live",
+    minute: "68'",
+    isFavorite: true,
   },
-
   {
     id: 2,
-    competition: "La Liga",
-    competitionLogo: "/laliga.png",
-
-    homeTeam: {
-      name: "Barcelona",
-      logo: "/barca.png",
+    league: {
+      name: "Premier League",
+      country: "England",
+      flag: "🏴",
+      matchday: 10,
     },
-
-    awayTeam: {
-      name: "Real Madrid",
-      logo: "/madrid.png",
-    },
-
+    homeTeam: "Manchester City",
+    awayTeam: "Everton",
     homeScore: 3,
-    awayScore: 2,
-
-    status: "FT",
+    awayScore: 0,
+    status: "finished",
+    minute: "FT",
+    isFavorite: false,
   },
-
   {
     id: 3,
-    competition: "Serie A",
-    competitionLogo: "/seriea.png",
-
-    homeTeam: {
-      name: "Inter",
-      logo: "/inter.png",
+    league: {
+      name: "Premier League",
+      country: "England",
+      flag: "🏴",
+      matchday: 10,
     },
-
-    awayTeam: {
-      name: "Juventus",
-      logo: "/juve.png",
-    },
-
-    status: "UPCOMING",
-    kickoff: "Today 20:45",
+    homeTeam: "Liverpool",
+    awayTeam: "Aston Villa",
+    homeScore: null,
+    awayScore: null,
+    status: "upcoming",
+    minute: "20:00",
+    isFavorite: false,
   },
   {
     id: 4,
-    competition: "Premier League",
-    competitionLogo: "/premier-league.png",
-
-    homeTeam: {
-      name: "Arsenal",
-      logo: "/arsenal.png",
+    league: {
+      name: "La Liga",
+      country: "Spain",
+      flag: "🇪🇸",
+      matchday: 11,
     },
-
-    awayTeam: {
-      name: "Chelsea",
-      logo: "/chelsea.png",
-    },
-
-    homeScore: 2,
-    awayScore: 1,
-
-    status: "LIVE",
-    minute: 72,
-  },
-
-  {
-    id: 5,
-    competition: "La Liga",
-    competitionLogo: "/laliga.png",
-
-    homeTeam: {
-      name: "Barcelona",
-      logo: "/barca.png",
-    },
-
-    awayTeam: {
-      name: "Real Madrid",
-      logo: "/madrid.png",
-    },
-
-    homeScore: 3,
-    awayScore: 2,
-
-    status: "FT",
-  },
-
-  {
-    id: 6,
-    competition: "Serie A",
-    competitionLogo: "/seriea.png",
-
-    homeTeam: {
-      name: "Inter",
-      logo: "/inter.png",
-    },
-
-    awayTeam: {
-      name: "Juventus",
-      logo: "/juve.png",
-    },
-
-    status: "UPCOMING",
-    kickoff: "Tomorrow 20:45",
-  },
-  {
-    id: 7,
-    competition: "Premier League",
-    competitionLogo: "/premier-league.png",
-
-    homeTeam: {
-      name: "Arsenal",
-      logo: "/arsenal.png",
-    },
-
-    awayTeam: {
-      name: "Chelsea",
-      logo: "/chelsea.png",
-    },
-
-    homeScore: 2,
-    awayScore: 1,
-
-    status: "LIVE",
-    minute: 72,
-  },
-
-  {
-    id: 8,
-    competition: "La Liga",
-    competitionLogo: "/laliga.png",
-
-    homeTeam: {
-      name: "Barcelona",
-      logo: "/barca.png",
-    },
-
-    awayTeam: {
-      name: "Real Madrid",
-      logo: "/madrid.png",
-    },
-
-    homeScore: 3,
-    awayScore: 2,
-
-    status: "FT",
-  },
-
-  {
-    id: 9,
-    competition: "Serie A",
-    competitionLogo: "/seriea.png",
-
-    homeTeam: {
-      name: "Inter",
-      logo: "/inter.png",
-    },
-
-    awayTeam: {
-      name: "Juventus",
-      logo: "/juve.png",
-    },
-
-    status: "UPCOMING",
-    kickoff: "Today 20:45",
-  },
-  {
-    id: 10,
-    competition: "Premier League",
-    competitionLogo: "/premier-league.png",
-
-    homeTeam: {
-      name: "Arsenal",
-      logo: "/arsenal.png",
-    },
-
-    awayTeam: {
-      name: "Chelsea",
-      logo: "/chelsea.png",
-    },
-
-    homeScore: 2,
-    awayScore: 1,
-
-    status: "LIVE",
-    minute: 72,
-  },
-
-  {
-    id: 11,
-    competition: "La Liga",
-    competitionLogo: "/laliga.png",
-
-    homeTeam: {
-      name: "Barcelona",
-      logo: "/barca.png",
-    },
-
-    awayTeam: {
-      name: "Real Madrid",
-      logo: "/madrid.png",
-    },
-
-    homeScore: 3,
-    awayScore: 2,
-
-    status: "FT",
-  },
-
-  {
-    id: 12,
-    competition: "Serie A",
-    competitionLogo: "/seriea.png",
-
-    homeTeam: {
-      name: "Inter",
-      logo: "/inter.png",
-    },
-
-    awayTeam: {
-      name: "Juventus",
-      logo: "/juve.png",
-    },
-
-    status: "UPCOMING",
-    kickoff: "Tomorrow 20:45",
+    homeTeam: "Real Madrid",
+    awayTeam: "Barcelona",
+    homeScore: null,
+    awayScore: null,
+    status: "upcoming",
+    minute: "21:00",
+    isFavorite: true,
   },
 ];
 
@@ -342,38 +163,41 @@ const followedTeams = [
 ];
 
 const Home = () => {
-  const [activeTab, setActiveTab] = useState();
 
   const [activeFilter, setActiveFilter] = useState("all");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
 
-  const counts = {
-    all: 28,
-    live: 7,
-    upcoming: 14,
-    finished: 7,
+  const [matchData, setMatchData] = useState(matches)
+
+  const handleToggleFavorite = (matchId) => {
+    setMatchData((prevMatches) => 
+      prevMatches.map((match) => 
+        match.id === matchId
+        ? { ...match, isFavorite: !match.isFavorite }
+        : match
+      )
+    );
   };
 
-  const displayMatches = matches.filter((match) => {
-    switch (activeTab) {
-      case "live":
-        return match.status === "LIVE";
-      case "today":
-        return match.status === "LIVE" || match.status === "FT";
-      case "upcoming":
-        return match.status === "UPCOMING";
-      default:
-        return false;
-    }
+  const counts = {
+    all: matchData.length,
+    live: matchData.filter((match) => match.status === "live").length,
+    upcoming: matchData.filter((match) => match.status === "upcoming").length,
+    finished: matchData.filter((match) => match.status === "finished").length,
+  };
+
+  // Apply status and favorites filters
+  const filteredMatches = matchData.filter((match) => {
+    const matchesStatus =
+      activeFilter === "all" || match.status === activeFilter;
+
+    const matchesFavorites =
+      !favoritesOnly || match.isFavorite;
+
+    return matchesStatus && matchesFavorites;
   });
 
-  const liveCount = matches.filter((m) => m.status === "LIVE").length;
-
-  const todayCount = matches.filter(
-    (m) => m.status === "LIVE" || m.status === "FT"
-  ).length;
-
-  const upcomingCount = matches.filter((m) => m.status === "UPCOMING").length;
+  
 
   return (
     <div className="flex flex-col w-full">
@@ -734,7 +558,6 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3">
                 <MatchFilters
                   activeFilter={activeFilter}
                   onFilterChange={setActiveFilter}
@@ -742,166 +565,14 @@ const Home = () => {
                   onFavoritesChange={setFavoritesOnly}
                   counts={counts}
                 />
-              </div>
+
 
               <div className="flex flex-col gap-3">
 
-                <div
-                  className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-xs"
-                >
-
-                  <div
-                    className="px-3 py-2 bg-slate-50 border-b border-slate-200 flex items-center justify-between"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span class="font-jakarta text-[11px] font-bold"
-                        >🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
-                      <span
-                        className="font-jakarta text-sm font-bold text-primary"
-                        >Premier League</span>
-                      <span
-                        className="font-jakarta text-[11px] text-slate-500 font-semibold"
-                        >Matchday 10</span>
-                    </div>
-                    <span
-                      className="material-symbols-outlined text-slate-400 text-lg! cursor-pointer hover:text-primary"
-                      >chevron_right</span>
-                  </div>
-
-                  <div className="flex flex-col divide-y divide-slate-100">
-
-                    <div
-                      className="px-3 py-2 flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer"
-                    >
-                      <div className="flex items-center gap-3 flex-1">
-                        <Button
-                          variant="ghost"
-                          className="text-amber-500 hover:text-amber-600 shrink-0 hover:bg-transparent"
-                        >
-                          <span
-                            className="material-symbols-outlined text-lg! [font-variation-settings:'FILL'_1]"
-                            
-                            >star</span>
-                        </Button>
-                        <div
-                          className="grid grid-cols-12 items-center flex-1 gap-2"
-                        >
-                          <span
-                            className="col-span-5 text-right font-jakarta text-sm font-bold text-primary truncate"
-                            >Arsenal</span>
-                          <div
-                            className="col-span-2 flex items-center justify-center gap-1.5 font-tabular-stat text-tabular-stat font-extrabold text-[#059669]"
-                          >
-                            <span>2</span>
-                            <span>-</span>
-                            <span>1</span>
-                          </div>
-                          <span
-                            class="col-span-5 text-left font-body-md text-body-md font-medium text-slate-700 truncate"
-                            >Chelsea</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center gap-space-sm shrink-0 ml-space-md"
-                      >
-                        <div
-                          class="flex items-center gap-1 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded text-[#059669]"
-                        >
-                          <span
-                            class="w-1.5 h-1.5 rounded-full bg-[#00E676] animate-ping"
-                          ></span>
-                          <span
-                            class="font-badge-status text-badge-status font-bold"
-                            >68'</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      class="px-space-md py-space-sm flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-md flex-1">
-                        <button
-                          aria-label="Favorite Man City vs Everton"
-                          class="text-slate-300 hover:text-amber-500 shrink-0"
-                        >
-                          <span class="material-symbols-outlined text-[18px]"
-                            >star</span
-                          >
-                        </button>
-                        <div
-                          class="grid grid-cols-12 items-center flex-1 gap-2"
-                        >
-                          <span
-                            class="col-span-5 text-right font-body-md text-body-md font-bold text-[#0F172A] truncate"
-                            >Manchester City</span
-                          >
-                          <div
-                            class="col-span-2 flex items-center justify-center gap-1.5 font-tabular-stat text-tabular-stat font-bold text-[#0F172A]"
-                          >
-                            <span>3</span>
-                            <span>-</span>
-                            <span>0</span>
-                          </div>
-                          <span
-                            class="col-span-5 text-left font-body-md text-body-md font-medium text-slate-700 truncate"
-                            >Everton</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center gap-space-sm shrink-0 ml-space-md"
-                      >
-                        <span
-                          class="font-badge-status text-badge-status px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-bold border border-slate-200"
-                          >FT</span
-                        >
-                      </div>
-                    </div>
-
-                    <div
-                      class="px-space-md py-space-sm flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer"
-                    >
-                      <div class="flex items-center gap-space-md flex-1">
-                        <button
-                          aria-label="Favorite Liverpool vs Aston Villa"
-                          class="text-slate-300 hover:text-amber-500 shrink-0"
-                        >
-                          <span class="material-symbols-outlined text-[18px]"
-                            >star</span
-                          >
-                        </button>
-                        <div
-                          class="grid grid-cols-12 items-center flex-1 gap-2"
-                        >
-                          <span
-                            class="col-span-5 text-right font-body-md text-body-md font-medium text-[#0F172A] truncate"
-                            >Liverpool</span
-                          >
-                          <div
-                            class="col-span-2 flex items-center justify-center font-label-caps text-label-caps text-slate-400 font-bold"
-                          >
-                            <span>vs</span>
-                          </div>
-                          <span
-                            class="col-span-5 text-left font-body-md text-body-md font-medium text-[#0F172A] truncate"
-                            >Aston Villa</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center gap-space-sm shrink-0 ml-space-md"
-                      >
-                        <span
-                          class="font-badge-status text-badge-status px-2.5 py-0.5 rounded bg-blue-50 text-blue-700 font-semibold border border-blue-100"
-                          >20:00</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {/* <MatchList
+                  matches={filteredMatches}
+                  onToggleFavorite={handleToggleFavorite}
+                /> */}
 
                 <div
                   class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-xs"
@@ -1612,9 +1283,9 @@ const Home = () => {
             {/* Matches */}
             <div className="lg:col-span-9 space-y-4">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {displayMatches.map((match) => (
-                  <MatchCard key={match.id} match={match} />
-                ))}
+                {/* {displayMatches.map((match) => (
+                  // <MatchCard key={match.id} match={match} />
+                ))} */}
               </div>
 
               <Link
@@ -1628,7 +1299,7 @@ const Home = () => {
 
             {/* Sidebar */}
             <aside className="lg:col-span-3">
-              <LeagueList />
+              {/* <LeagueList /> */}
             </aside>
           </div>
 
