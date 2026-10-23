@@ -6,7 +6,9 @@ import LatestNews from "@/components/layout/LatestNews";
 import LeagueList from "@/components/layout/LeagueList";
 import MatchCard from "@/components/layout/MatchCard";
 import TopLeagues from "@/components/layout/TopLeagues";
+import MatchFilters from "@/components/layout/MatchFilter";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 import {
   ArrowRight,
@@ -341,6 +343,16 @@ const followedTeams = [
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState();
+
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [favoritesOnly, setFavoritesOnly] = useState(false);
+
+  const counts = {
+    all: 28,
+    live: 7,
+    upcoming: 14,
+    finished: 7,
+  };
 
   const displayMatches = matches.filter((match) => {
     switch (activeTab) {
@@ -722,110 +734,63 @@ const Home = () => {
                 </div>
               </div>
 
-              <div
-                className="flex items-center justify-between gap-2 bg-white border border-slate-200 rounded-xl p-1 shadow-xs"
-              >
-                <div
-                  className="flex items-center gap-1 overflow-x-auto scrollbar-none"
-                >
-                  <Button
-                    className="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-jakarta text-sm font-bold whitespace-nowrap shadow-xs"
-                  >
-                    All Matches (28)
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    className="px-3 py-1.5 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-100 transition-colors font-jakarta text-sm font-semibold whitespace-nowrap flex items-center gap-1.5"
-                  >
-                    <span
-                      className="w-2 h-2 rounded-full bg-[#00E676] animate-pulse"
-                    ></span>
-                    <span className="text-[#059669] font-bold">Live (7)</span>
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    className="px-3 py-1.5 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-100 transition-colors font-jakarta text-sm font-medium whitespace-nowrap"
-                  >
-                    Upcoming (14)
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-100 transition-colors font-jakarta text-sm font-medium whitespace-nowrap"
-                  >
-                    Finished (7)
-                  </Button>
-                </div>
-                <label
-                  class="flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-slate-50 border border-slate-200 cursor-pointer select-none shrink-0 hover:bg-slate-100 transition-colors"
-                >
-                  <span
-                    class="material-symbols-outlined text-[16px] text-amber-500"
-                    >star</span
-                  >
-                  <span
-                    class="font-label-caps text-label-caps text-[#0F172A] font-bold hidden sm:inline"
-                    >Favorites Only</span
-                  >
-                  <input
-                    class="accent-emerald-600 rounded cursor-pointer w-3.5 h-3.5"
-                    type="checkbox"
-                  />
-                </label>
+              <div className="flex flex-col gap-3">
+                <MatchFilters
+                  activeFilter={activeFilter}
+                  onFilterChange={setActiveFilter}
+                  favoritesOnly={favoritesOnly}
+                  onFavoritesChange={setFavoritesOnly}
+                  counts={counts}
+                />
               </div>
 
-              <div class="flex flex-col gap-space-md">
+              <div className="flex flex-col gap-3">
 
                 <div
-                  class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-xs"
+                  className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-xs"
                 >
 
                   <div
-                    class="px-space-md py-space-sm bg-slate-50 border-b border-slate-200 flex items-center justify-between"
+                    className="px-3 py-2 bg-slate-50 border-b border-slate-200 flex items-center justify-between"
                   >
-                    <div class="flex items-center gap-space-sm">
-                      <span class="font-label-caps text-label-caps font-bold"
-                        >🏴󠁧󠁢󠁥󠁮󠁧󠁿</span
-                      >
+                    <div className="flex items-center gap-2">
+                      <span class="font-jakarta text-[11px] font-bold"
+                        >🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
                       <span
-                        class="font-body-md text-body-md font-bold text-[#0F172A]"
-                        >Premier League</span
-                      >
+                        className="font-jakarta text-sm font-bold text-primary"
+                        >Premier League</span>
                       <span
-                        class="font-label-caps text-label-caps text-slate-500 font-semibold"
-                        >Matchday 10</span
-                      >
+                        className="font-jakarta text-[11px] text-slate-500 font-semibold"
+                        >Matchday 10</span>
                     </div>
                     <span
-                      class="material-symbols-outlined text-slate-400 text-[18px] cursor-pointer hover:text-[#0F172A]"
-                      >chevron_right</span
-                    >
+                      className="material-symbols-outlined text-slate-400 text-lg! cursor-pointer hover:text-primary"
+                      >chevron_right</span>
                   </div>
 
-                  <div class="flex flex-col divide-y divide-slate-100">
+                  <div className="flex flex-col divide-y divide-slate-100">
 
                     <div
-                      class="px-space-md py-space-sm flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer"
+                      className="px-3 py-2 flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer"
                     >
-                      <div class="flex items-center gap-space-md flex-1">
-                        <button
-                          aria-label="Favorite Arsenal vs Chelsea"
-                          class="text-amber-500 hover:text-amber-600 shrink-0"
+                      <div className="flex items-center gap-3 flex-1">
+                        <Button
+                          variant="ghost"
+                          className="text-amber-500 hover:text-amber-600 shrink-0 hover:bg-transparent"
                         >
                           <span
-                            class="material-symbols-outlined text-lg [font-variation-settings: 'FILL'_1]"
+                            className="material-symbols-outlined text-lg! [font-variation-settings:'FILL'_1]"
                             
-                            >star</span
-                          >
-                        </button>
+                            >star</span>
+                        </Button>
                         <div
-                          class="grid grid-cols-12 items-center flex-1 gap-2"
+                          className="grid grid-cols-12 items-center flex-1 gap-2"
                         >
                           <span
-                            class="col-span-5 text-right font-body-md text-body-md font-bold text-[#0F172A] truncate"
-                            >Arsenal</span
-                          >
+                            className="col-span-5 text-right font-jakarta text-sm font-bold text-primary truncate"
+                            >Arsenal</span>
                           <div
-                            class="col-span-2 flex items-center justify-center gap-1.5 font-tabular-stat text-tabular-stat font-extrabold text-[#059669]"
+                            className="col-span-2 flex items-center justify-center gap-1.5 font-tabular-stat text-tabular-stat font-extrabold text-[#059669]"
                           >
                             <span>2</span>
                             <span>-</span>
