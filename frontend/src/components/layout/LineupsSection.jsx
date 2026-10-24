@@ -186,7 +186,7 @@ const chelsea = {
   
   export default function LineupsSection() {
     return (
-      <section className="bg-white rounded-xl p-5 shadow-sm">
+      <section className="bg-white rounded-xl p-5 shadow-sm border">
         <div className="flex flex-wrap items-center justify-between pb-3 mb-2 border-b border-border gap-2">
           <div className="flex items-center gap-2">
             <h2 className="font-jakarta text-lg text-primary font-bold">

@@ -1,6 +1,8 @@
 import Container from "@/components/layout/Container";
+import InDepthTelemetry from "@/components/layout/InDepthTelemetry";
 import LineupsSection from "@/components/layout/LineupsSection";
 import MatchMomentum from "@/components/layout/MatchMomentum";
+import MatchOverviewStats from "@/components/layout/MatchOverviewStats";
 import MatchScoreSection from "@/components/layout/MatchScoreSection";
 import MatchTimeline from "@/components/layout/MatchTimeline";
 import TopPerformer from "@/components/layout/TopPerformer";
@@ -114,7 +116,7 @@ const MatchDetails = () => {
         >
 
           <div class="lg:col-span-8 flex flex-col gap-5">
-
+            <MatchOverviewStats/>
             <MatchMomentum/>
 
             <MatchTimeline/>
@@ -126,126 +128,7 @@ const MatchDetails = () => {
 
             <TopPerformer/>
 
-            <section
-              class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm"
-            >
-              <div
-                class="flex items-center justify-between pb-space-sm mb-space-sm border-b border-surface-container-high"
-              >
-                <h3
-                  class="font-headline-md text-headline-md text-on-surface flex items-center gap-2"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary text-[20px]"
-                    >analytics</span
-                  >
-                  In-Depth Telemetry
-                </h3>
-                <span
-                  class="font-label-sm text-label-sm text-on-surface-variant"
-                  >ARS vs CHE</span
-                >
-              </div>
-
-              <div class="space-y-4 pt-1 font-body-sm text-body-sm">
-
-                <div>
-                  <div class="flex justify-between items-center mb-1">
-                    <span class="font-bold text-on-surface">3</span>
-                    <span class="text-on-surface-variant font-medium"
-                      >Big Chances Created</span
-                    >
-                    <span class="font-bold text-on-surface">2</span>
-                  </div>
-                  <div
-                    class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex"
-                  >
-                    <div class="bg-primary h-full w-[60%]" ></div>
-                    <div class="bg-tertiary h-full w-[40]"></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex justify-between items-center mb-1">
-                    <span class="font-bold text-on-surface">88% (342/388)</span>
-                    <span class="text-on-surface-variant font-medium"
-                      >Passing Accuracy</span
-                    >
-                    <span class="font-bold text-on-surface">83% (261/314)</span>
-                  </div>
-                  <div
-                    class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex"
-                  >
-                    <div class="bg-primary h-full w-[52%]" ></div>
-                    <div class="bg-tertiary h-full w-[48%]" ></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex justify-between items-center mb-1">
-                    <span class="font-bold text-on-surface">14 (74%)</span>
-                    <span class="text-on-surface-variant font-medium"
-                      >Tackles Won</span
-                    >
-                    <span class="font-bold text-on-surface">11 (61%)</span>
-                  </div>
-                  <div
-                    class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex"
-                  >
-                    <div class="bg-primary h-full w-[56%]"></div>
-                    <div class="bg-tertiary h-full w-[44%]"></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex justify-between items-center mb-1">
-                    <span class="font-bold text-on-surface">9</span>
-                    <span class="text-on-surface-variant font-medium"
-                      >Fouls</span
-                    >
-                    <span class="font-bold text-on-surface">12</span>
-                  </div>
-                  <div
-                    class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex"
-                  >
-                    <div class="bg-primary h-full w-[43%]" ></div>
-                    <div class="bg-tertiary h-full w-57%" ></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex justify-between items-center mb-1">
-                    <span class="font-bold text-on-surface">3</span>
-                    <span class="text-on-surface-variant font-medium"
-                      >Saves</span
-                    >
-                    <span class="font-bold text-on-surface">4</span>
-                  </div>
-                  <div
-                    class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex"
-                  >
-                    <div class="bg-primary h-full w-[43%]"></div>
-                    <div class="bg-tertiary h-full w-[57%]"></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex justify-between items-center mb-1">
-                    <span class="font-bold text-on-surface">1</span>
-                    <span class="text-on-surface-variant font-medium"
-                      >Offsides</span
-                    >
-                    <span class="font-bold text-on-surface">3</span>
-                  </div>
-                  <div
-                    class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex"
-                  >
-                    <div class="bg-primary h-full w-[25%]" ></div>
-                    <div class="bg-tertiary h-full w-[75%]" ></div>
-                  </div>
-                </div>
-              </div>
-            </section>
+            <InDepthTelemetry/>
 
             <section
               class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm"

@@ -255,7 +255,7 @@ const incidents = [
   
   export default function MatchTimeline() {
     return (
-      <section className="bg-white rounded-xl p-5 shadow-sm">
+      <section className="bg-white rounded-xl p-5 shadow-sm border">
         <TimelineHeader count={incidents.length} />
   
         <div className="space-y-3">
