@@ -2,6 +2,7 @@ import Container from "@/components/layout/Container";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CalendarDays, MapPin, Users } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const matchTabClass = `
   rounded-none
@@ -25,7 +26,333 @@ const matchTabClass = `
 
 const MatchDetails = () => {
   return (
-    <div className="py-8">
+    <div className="">
+      <div className="flex flex-col w-full pt-5">
+        <section className="bg-white shadow-sm rounded-xl px-8 py-3 border mx-8">
+          <Container className="py-2 flex flex-wrap items-center justify-between gap-2 border-b border-border">
+            <div className="flex items-center gap-2 flex-wrap">
+              <Link
+                className="font-jakarta text-sm text-slate-500 hover:text-primary transition-colors flex items-center gap-1"
+                href="#"
+              >
+                <span className="material-symbols-outlined text-base! text-slate-500">sports_soccer</span>
+                Premier League
+              </Link>
+              <span className="text-primary/50 font-jakarta">/</span>
+              <span className="font-jakarta text-sm text-slate-500">Matchday 10</span>
+              <span className="text-primary/50 font-jakarta">/</span>
+              <span
+                className="font-jakarta text-sm text-primary font-semibold"
+                >Arsenal vs Chelsea</span>
+              <span
+                className="bg-background text-primary font-jakarta text-sm px-2 py-0.5 rounded-full uppercase ml-2 font-bold tracking-wider"
+              >
+                London Derby
+              </span>
+            </div>
+
+            <div
+              className="flex items-center gap-3 text-slate-500 font-jakarta text-sm"
+            >
+              <span className="flex items-center gap-1">
+                <span
+                  className="material-symbols-outlined text-base! text-slate-500"
+                  >stadium</span>
+                Emirates Stadium, London
+              </span>
+              <span className="hidden md:inline-flex items-center gap-1">
+                <span
+                  className="material-symbols-outlined text-base! text-slate-500"
+                  >groups</span>
+                60,260
+              </span>
+              <span className="hidden lg:inline-flex items-center gap-1">
+                <span
+                  className="material-symbols-outlined text-base! text-slate-500"
+                  >sports</span>
+                Ref: Michael Oliver
+              </span>
+            </div>
+          </Container>
+
+          <Container className="py-4">
+            <div className="flex items-center justify-between pb-3">
+              {/* <div className="flex items-center gap-2">
+                <div
+                  class="inline-flex items-center gap-1.5 bg-secondary-fixed/30 text-on-secondary-fixed px-2.5 py-1 rounded-full"
+                >
+                  <span class="relative flex h-2 w-2">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed-dim opacity-75"
+                    ></span>
+                    <span
+                      class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+                    ></span>
+                  </span>
+                  <span
+                    class="font-label-md text-label-md font-extrabold uppercase tracking-wide"
+                    >68' In-Play</span
+                  >
+                </div>
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >2nd Half • Pulse Radar Synced</span
+                >
+              </div> */}
+              {/* <div class="flex items-center gap-2">
+                <button
+                  class="bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px] text-primary"
+                    >sensors</span
+                  >
+                  <span class="hidden sm:inline">Live Commentary</span>
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"
+                  ></span>
+                </button>
+                <button
+                  class="bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >volume_up</span
+                  >
+                  <span class="hidden sm:inline">Audio</span>
+                </button>
+                <button
+                  class="p-1.5 bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded-lg transition-colors"
+                  title="Share Match"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >share</span
+                  >
+                </button>
+                <button
+                  class="p-1.5 bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded-lg transition-colors"
+                  title="Pin Widget"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >push_pin</span
+                  >
+                </button>
+              </div> */}
+            </div>
+
+            <div
+              className="grid grid-cols-1 md:grid-cols-12 gap-y-6 items-center py-3"
+            >
+
+              <div
+                className="md:col-span-5 flex items-center justify-start md:justify-end gap-3 order-1"
+              >
+                <div className="flex flex-col text-left md:text-right min-w-0">
+                  <div className="flex items-center md:justify-end gap-2">
+                    <span
+                      class="font-jakarta text-2xl font-extrabold text-primary tracking-tight truncate"
+                      >Arsenal</span>
+                    <span
+                      className="bg-background px-2 py-0.5 rounded text-[11px] font-bold text-on-surface-variant font-label-sm"
+                      >HOME</span
+                    >
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    M. Arteta • 1st Live Standings
+                  </p>
+                </div>
+
+                <div
+                  class="w-16 h-16 rounded-xl bg-error/10 flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden"
+                >
+                  <div
+                    class="absolute inset-0 bg-gradient-to-tr from-error/20 to-transparent"
+                  ></div>
+                  <span
+                    class="material-symbols-outlined text-[36px] text-error relative z-10"
+                    >shield</span
+                  >
+                  <span
+                    class="absolute bottom-1 font-score-display text-[9px] font-black text-error z-10"
+                    >ARS</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="md:col-span-2 flex flex-col items-center justify-center text-center order-2"
+              >
+                <div
+                  class="inline-flex items-center gap-3 bg-surface-container px-5 py-2 rounded-xl shadow-inner"
+                >
+                  <span
+                    class="font-score-display text-score-display text-on-surface tracking-tight"
+                    >2</span
+                  >
+                  <span
+                    class="font-score-display text-score-display text-on-surface-variant/40 select-none"
+                    >:</span
+                  >
+                  <span
+                    class="font-score-display text-score-display text-on-surface tracking-tight"
+                    >1</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold mt-1.5 flex items-center gap-1"
+                >
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-primary inline-block"
+                  ></span>
+                  68' In Progress
+                </span>
+              </div>
+
+              <div
+                class="md:col-span-5 flex items-center justify-start gap-space-md order-3"
+              >
+
+                <div
+                  class="w-16 h-16 rounded-xl bg-tertiary/10 flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden"
+                >
+                  <div
+                    class="absolute inset-0 bg-gradient-to-tr from-tertiary/20 to-transparent"
+                  ></div>
+                  <span
+                    class="material-symbols-outlined text-[36px] text-tertiary relative z-10"
+                    >shield</span
+                  >
+                  <span
+                    class="absolute bottom-1 font-score-display text-[9px] font-black text-tertiary z-10"
+                    >CHE</span
+                  >
+                </div>
+                <div class="flex flex-col text-left min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="font-headline-lg text-headline-lg font-extrabold text-on-surface tracking-tight truncate"
+                      >Chelsea</span
+                    >
+                    <span
+                      class="bg-surface-container px-2 py-0.5 rounded text-[11px] font-bold text-on-surface-variant font-label-sm"
+                      >AWAY</span
+                    >
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    E. Maresca • 4th Live Standings
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-space-sm pb-space-md border-t border-surface-container-high text-body-sm font-body-sm text-on-surface-variant"
+            >
+              <div class="flex items-center md:justify-end gap-3 flex-wrap">
+                <span
+                  class="inline-flex items-center gap-1 text-on-surface font-semibold"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-primary"
+                    >sports_soccer</span
+                  >
+                  B. Saka 24'
+                </span>
+                <span class="text-on-surface-variant/40">•</span>
+                <span
+                  class="inline-flex items-center gap-1 text-on-surface font-semibold"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-primary"
+                    >sports_soccer</span
+                  >
+                  M. Ødegaard 58' (P)
+                </span>
+              </div>
+              <div class="flex items-center justify-start gap-3 flex-wrap">
+                <span
+                  class="inline-flex items-center gap-1 text-on-surface font-semibold"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-tertiary"
+                    >sports_soccer</span
+                  >
+                  C. Palmer 41'
+                </span>
+              </div>
+            </div>
+
+            <div
+              class="bg-surface-container-low rounded-xl p-space-md mt-space-xs"
+            >
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+
+                <div class="flex flex-col gap-1.5">
+                  <div
+                    class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant"
+                  >
+                    <span class="font-bold text-primary">56%</span>
+                    <span class="uppercase">Possession</span>
+                    <span class="font-bold text-tertiary">44%</span>
+                  </div>
+                  <div
+                    class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex"
+                  >
+                    <div class="bg-primary h-full w-[56%]"></div>
+                    <div class="bg-tertiary h-full w-[44%]"></div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <div
+                    class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant"
+                  >
+                    <span class="font-bold text-primary">1.84</span>
+                    <span class="uppercase">xG (Quality)</span>
+                    <span class="font-bold text-tertiary">1.12</span>
+                  </div>
+                  <div
+                    class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex"
+                  >
+                    <div class="bg-primary h-full w-[62%]" ></div>
+                    <div class="bg-tertiary h-full w-[38%]" ></div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <div
+                    class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant"
+                  >
+                    <span class="font-bold text-primary">6 (14)</span>
+                    <span class="uppercase">Shots (Target)</span>
+                    <span class="font-bold text-tertiary">4 (9)</span>
+                  </div>
+                  <div
+                    class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex"
+                  >
+                    <div class="bg-primary h-full w-[60%]" ></div>
+                    <div class="bg-tertiary h-full w-[40%]" ></div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <div
+                    class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant"
+                  >
+                    <span class="font-bold text-primary">7 / 48</span>
+                    <span class="uppercase">Corners / Attacks</span>
+                    <span class="font-bold text-tertiary">3 / 34</span>
+                  </div>
+                  <div
+                    class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex"
+                  >
+                    <div class="bg-primary h-full w-[58%]"></div>
+                    <div class="bg-tertiary h-full w-[42%]" ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+      </div>
       <Container className="space-y-12">
         <section className="bg-white border rounded-xl p-8 mb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">

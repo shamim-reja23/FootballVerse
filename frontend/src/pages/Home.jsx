@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import ArticleCard from "@/components/layout/ArticleCard.jsx";
 import Container from "@/components/layout/Container.jsx";
 import DateSelector from "@/components/layout/DateSelector";
-import FeaturedArticle from "@/components/layout/FeaturedArticle.jsx";
-import LatestNews from "@/components/layout/BreakingNews";
 import TopLeagues from "@/components/layout/TopLeagues";
 import MatchFilters from "@/components/layout/MatchFilter";
 import MatchList from "@/components/layout/MatchList";
@@ -13,7 +10,6 @@ import MatchList from "@/components/layout/MatchList";
 import { Button } from "@/components/ui/button";
 
 import {
-  ArrowRight,
   CalendarDays,
   ChartLine,
   ChevronLeft,
