@@ -6,6 +6,8 @@ import Navbar from "./components/layout/Navbar.jsx";
 
 import Home from "./pages/Home.jsx";
 import MatchDetails from './pages/MatchDetails.jsx';
+import NewsHomePage from './pages/NewsHomePage.jsx';
+import NewsDetailPage from './pages/NewsDetailPage.jsx';
 
 
 function App() {
@@ -16,6 +18,13 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/matches/matchdetails' element={<MatchDetails/>} />
+          <Route path='/news' element={<NewsHomePage/>}/>
+          <Route path='/news/latest' element={<NewsHomePage category="latest" />} />
+          <Route path='/news/analysis' element={<NewsHomePage category="analysis" />} />
+          <Route path='/news/opinion' element={<NewsHomePage category="opinion" />} />
+          <Route path='/news/:slug' element={<NewsDetailPage />} />
+
+
         </Routes>
       </main>
       <Footer/>
