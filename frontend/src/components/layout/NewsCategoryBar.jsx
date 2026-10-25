@@ -45,7 +45,7 @@ export default function NewsCategoryBar() {
       className="mb-5 w-full bg-white shadow-sm"
     >
       <Container className="py-3">
-        <div className="no-scrollbar flex w-full items-center gap-2 overflow-x-auto py-1">
+        <div className="no-scrollbar flex w-full items-center gap-2 overflow-x-auto">
           {categories.map((category) => (
             <NavLink
               key={category.to}

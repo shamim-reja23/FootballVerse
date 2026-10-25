@@ -1,3 +1,5 @@
+import Container from '@/components/layout/Container'
+import FeaturedNews from '@/components/layout/FeaturedNews'
 import NewsCategoryBar from '@/components/layout/NewsCategoryBar'
 import { Button } from '@/components/ui/button'
 import React from 'react'
@@ -7,126 +9,15 @@ const NewsHomePage = () => {
     <div className='flex flex-col w-full'>
         <NewsCategoryBar/>
 
-        <div
-          class="max-w-7xl mx-auto px-margin md:px-margin-desktop w-full pb-space-xl"
+        <Container
+          class="w-full pb-8"
         >
 
           <section
-            class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl"
+            class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-8"
           >
 
-            <div
-              class="lg:col-span-8 flex flex-col justify-end relative rounded-xl overflow-hidden min-h-[460px] md:min-h-[520px] shadow-sm group"
-            >
-
-              <img
-                alt="Top European football match under floodlights"
-                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1X3EUcvRQ9qgGDVtSxGhRTJ3FGqDN7ePdg3FVUJAjMe_TXHHrl6vqGNhlcGAayKYxKuLRolC5eVTc5dexxswucsljgXyLMXEvU11fF78n8CyCGEC0jl7LEVQrnsuokDDoB1-QgTStiqMYOQOVmTxo13IBian8FVCAqZhG6WxWZTjggKt2AY_ufvv6WDlyD-edzt2Uf3gChLKvvitgVcunaGMFZ4QkznImibARO34W062cKEcuW-hKV4PMc"
-              />
-
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/60 to-transparent"
-              ></div>
-              <div
-                class="absolute inset-0 bg-gradient-to-r from-inverse-surface/80 via-transparent to-transparent"
-              ></div>
-
-              <div
-                class="relative z-10 p-space-md md:p-space-xl flex flex-col gap-space-sm text-inverse-on-surface"
-              >
-
-                <div class="flex items-center gap-space-sm flex-wrap">
-                  <span
-                    class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase font-bold tracking-wider flex items-center gap-1 shadow-sm"
-                  >
-                    <span
-                      class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"
-                    ></span>
-                    Tactical Spotlight
-                  </span>
-                  <span
-                    class="px-2.5 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-sm text-inverse-on-surface font-label-sm text-label-sm uppercase tracking-wide"
-                  >
-                    Matchday 11 Deep Dive
-                  </span>
-                  <span
-                    class="text-label-sm font-label-sm text-inverse-on-surface/80"
-                    >6 min read</span
-                  >
-                  <span class="text-inverse-on-surface/50">•</span>
-                  <span
-                    class="text-label-sm font-label-sm text-inverse-on-surface/80"
-                    >24m ago</span
-                  >
-                </div>
-
-                <h1
-                  class="font-headline-xl text-headline-xl text-inverse-on-surface leading-tight font-extrabold max-w-2xl drop-shadow-sm group-hover:text-primary-fixed transition-colors"
-                >
-                  How Arteta’s Inverted Double-Pivot Overwhelmed Chelsea in the
-                  London Derby
-                </h1>
-
-                <p
-                  class="font-body-md text-body-md text-inverse-on-surface/90 max-w-2xl hidden sm:block"
-                >
-                  By pinning Chelsea’s double-six with layered interior
-                  rotations, Martin Ødegaard and Declan Rice created unmatched
-                  spatial overload, yielding 3.12 xG and suffocating rapid
-                  transitions.
-                </p>
-
-                <div
-                  class="pt-space-sm flex items-center justify-between flex-wrap gap-space-md border-t border-inverse-on-surface/10 mt-space-xs"
-                >
-                  <div class="flex items-center gap-space-sm">
-                    <img
-                      class="w-9 h-9 rounded-full object-cover shadow-inner"
-                      data-alt="Close up professional headshot of Michael Cox, sharp athletic tactical sports journalist in black polo against neutral daylight background"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXfBH6kxZlMhCKc1C5xo1mjwWZywZ2IyXDlfusGVyGDnm5TX_PaT8uRjfUbyX1wai-5-ShJwb6T_ZfW-4qBXbs9pOlGs48EEbGEM2mohOnqv9lq0_Y9QOoUbuSXs7A3LwRUEJVKiitcZkmPzBZhnNSQh6aaWzyy0oZ64y-mdASxwISh-vjJPln9ra2ajwTDefFO6RhY9PK9jqXoWkfj7I3uHKzWu35bzCQqcH19yMqE6PyfD75eK7p"
-                    />
-                    <div>
-                      <p
-                        class="font-label-md text-label-md text-inverse-on-surface font-bold"
-                      >
-                        Michael Cox
-                      </p>
-                      <p
-                        class="font-body-sm text-body-sm text-inverse-on-surface/70"
-                      >
-                        Senior Tactical Analyst
-                      </p>
-                    </div>
-                  </div>
-
-                  <div
-                    class="flex items-center gap-space-sm bg-inverse-surface/70 backdrop-blur-md px-space-sm py-1 rounded-full"
-                  >
-                    <button
-                      aria-label="Previous story"
-                      class="w-7 h-7 rounded-full flex items-center justify-center text-inverse-on-surface hover:bg-inverse-surface transition-colors"
-                    >
-                      <span class="material-symbols-outlined text-headline-sm"
-                        >chevron_left</span
-                      >
-                    </button>
-                    <span
-                      class="font-label-sm text-label-sm text-inverse-on-surface font-semibold tracking-wider"
-                      >01 / 04</span
-                    >
-                    <button
-                      aria-label="Next story"
-                      class="w-7 h-7 rounded-full flex items-center justify-center text-inverse-on-surface hover:bg-inverse-surface transition-colors"
-                    >
-                      <span class="material-symbols-outlined text-headline-sm"
-                        >chevron_right</span
-                      >
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <FeaturedNews/>
 
             <div class="lg:col-span-4 flex flex-col gap-space-md">
 
@@ -1280,7 +1171,7 @@ const NewsHomePage = () => {
               </div>
             </aside>
           </div>
-        </div>
+        </Container>
     </div>
   )
 }
