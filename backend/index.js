@@ -4,6 +4,8 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import connectDB from "./utils/db.js";
 
+import articleRouter from "./routes/article.route.js";
+
 dotenv.config();
 
 const app = express();
@@ -26,6 +28,8 @@ app.get("/api/health", (req, res) => {
     message: "FootballVerse API is running ",
   });
 });
+
+app.use("/api/articles", articleRouter);
 
 const PORT = process.env.PORT || 5002;
 
