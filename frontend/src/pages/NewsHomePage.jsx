@@ -1,5 +1,6 @@
 import Container from '@/components/layout/Container'
 import FeaturedNews from '@/components/layout/FeaturedNews'
+import FeaturedNewsSidebar from '@/components/layout/FeaturedNewsSidebar'
 import NewsCategoryBar from '@/components/layout/NewsCategoryBar'
 import { Button } from '@/components/ui/button'
 import React from 'react'
@@ -19,135 +20,7 @@ const NewsHomePage = () => {
 
             <FeaturedNews/>
 
-            <div class="lg:col-span-4 flex flex-col gap-space-md">
-
-              <article
-                class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer h-full"
-              >
-                <div>
-                  <div class="flex items-center justify-between mb-space-xs">
-                    <span
-                      class="px-2 py-0.5 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm uppercase font-bold tracking-wider"
-                    >
-                      Transfer Radar
-                    </span>
-                    <span class="text-body-sm font-body-sm text-outline"
-                      >1h ago</span
-                    >
-                  </div>
-                  <h2
-                    class="font-headline-md text-headline-md text-on-surface font-bold group-hover:text-primary transition-colors mb-space-xs"
-                  >
-                    Real Madrid intensify talks for Alphonso Davies ahead of
-                    summer window
-                  </h2>
-                  <p
-                    class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2"
-                  >
-                    Verbal framework reached over wage structures. Bayern Munich
-                    hold final extension summit at Säbener Straße.
-                  </p>
-                </div>
-                <div
-                  class="flex items-center justify-between pt-space-sm text-body-sm font-body-sm text-outline"
-                >
-                  <span
-                    class="font-label-sm text-label-sm text-primary font-bold flex items-center gap-1"
-                  >
-                    <span class="material-symbols-outlined text-headline-sm"
-                      >check_circle</span
-                    >
-                    High Confidence (85%)
-                  </span>
-                  <span>4 min read</span>
-                </div>
-              </article>
-
-              <article
-                class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer h-full"
-              >
-                <div>
-                  <div class="flex items-center justify-between mb-space-xs">
-                    <span
-                      class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase font-bold tracking-wider"
-                    >
-                      Telemetry Preview
-                    </span>
-                    <span class="text-body-sm font-body-sm text-outline"
-                      >2h ago</span
-                    >
-                  </div>
-                  <h2
-                    class="font-headline-md text-headline-md text-on-surface font-bold group-hover:text-primary transition-colors mb-space-xs"
-                  >
-                    Champions League Matchday 4: Defensive fragility models
-                    &amp; xG forecasts
-                  </h2>
-                  <p
-                    class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2"
-                  >
-                    Algorithmic simulations identify critical rest-defense
-                    lapses in PSG’s midfield build-up ahead of Milan clash.
-                  </p>
-                </div>
-                <div
-                  class="flex items-center justify-between pt-space-sm text-body-sm font-body-sm text-outline"
-                >
-                  <span
-                    class="font-label-sm text-label-sm text-tertiary font-bold flex items-center gap-1"
-                  >
-                    <span class="material-symbols-outlined text-headline-sm"
-                      >analytics</span
-                    >
-                    Model v4.8 Applied
-                  </span>
-                  <span>5 min read</span>
-                </div>
-              </article>
-
-              <article
-                class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer h-full"
-              >
-                <div>
-                  <div class="flex items-center justify-between mb-space-xs">
-                    <span
-                      class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase font-bold tracking-wider"
-                    >
-                      Injury Wire
-                    </span>
-                    <span class="text-body-sm font-body-sm text-outline"
-                      >3h ago</span
-                    >
-                  </div>
-                  <h2
-                    class="font-headline-md text-headline-md text-on-surface font-bold group-hover:text-primary transition-colors mb-space-xs"
-                  >
-                    Kevin De Bruyne returns to full team training before
-                    top-of-table clash
-                  </h2>
-                  <p
-                    class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2"
-                  >
-                    Pep Guardiola confirms midfielder completed 90 minutes of
-                    small-sided drills with high GPS acceleration scores.
-                  </p>
-                </div>
-                <div
-                  class="flex items-center justify-between pt-space-sm text-body-sm font-body-sm text-outline"
-                >
-                  <span
-                    class="font-label-sm text-label-sm text-on-surface-variant font-bold flex items-center gap-1"
-                  >
-                    <span
-                      class="material-symbols-outlined text-headline-sm text-secondary"
-                      >verified</span
-                    >
-                    Confirmed Medical Clearance
-                  </span>
-                  <span>3 min read</span>
-                </div>
-              </article>
-            </div>
+            <FeaturedNewsSidebar/>
           </section>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
