@@ -1,9 +1,12 @@
+import BreakingNews from '@/components/layout/BreakingNews'
 import Container from '@/components/layout/Container'
 import FeaturedNews from '@/components/layout/FeaturedNews'
 import FeaturedNewsSidebar from '@/components/layout/FeaturedNewsSidebar'
 import MatchPreviews from '@/components/layout/MatchPreviews'
 import NewsCategoryBar from '@/components/layout/NewsCategoryBar'
 import TacticalBreakdowns from '@/components/layout/TacticalBreakdown'
+import TopPerformer from '@/components/layout/TopPerformer'
+import TopReadStories from '@/components/layout/TopReadStories'
 import TransferRadar from '@/components/layout/TransferRadar'
 import { Button } from '@/components/ui/button'
 import React from 'react'
@@ -14,11 +17,11 @@ const NewsHomePage = () => {
         <NewsCategoryBar/>
 
         <Container
-          class="w-full pb-8"
+          className="w-full pb-8"
         >
 
           <section
-            class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-8"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-8"
           >
 
             <FeaturedNews/>
@@ -26,9 +29,9 @@ const NewsHomePage = () => {
             <FeaturedNewsSidebar/>
           </section>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-            <div class="lg:col-span-8 flex flex-col gap-8">
+            <div className="lg:col-span-8 flex flex-col gap-8">
 
               <TacticalBreakdowns/>
 
@@ -37,144 +40,12 @@ const NewsHomePage = () => {
               <MatchPreviews/>
             </div>
 
-            <aside class="lg:col-span-4 flex flex-col gap-space-lg">
+            <aside className="lg:col-span-4 flex flex-col gap-5">
 
-              <div
-                class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm"
-              >
-                <div
-                  class="flex items-center justify-between pb-space-sm border-b border-surface-container mb-space-md"
-                >
-                  <h3
-                    class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-1.5"
-                  >
-                    <span
-                      class="material-symbols-outlined text-headline-sm text-secondary font-variation-settings:'FILL'_1"
+              <TopReadStories/>
+              <BreakingNews/>
 
-                      >trending_up</span
-                    >
-                    Top Read Stories
-                  </h3>
-                  <span
-                    class="font-label-sm text-label-sm text-outline font-semibold uppercase"
-                    >Past 24 Hours</span
-                  >
-                </div>
-                <div class="flex flex-col gap-space-md">
-
-                  <a class="flex items-start gap-space-md group" href="#">
-                    <span
-                      class="font-score-display text-score-display text-primary/30 group-hover:text-primary transition-colors leading-none shrink-0 w-8"
-                      >01</span
-                    >
-                    <div class="flex flex-col gap-1">
-                      <h4
-                        class="font-label-lg text-label-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug"
-                      >
-                        Arteta reveals the hidden training session drill that
-                        altered Arsenal's build-up mechanics
-                      </h4>
-                      <div
-                        class="flex items-center gap-space-sm text-body-sm font-body-sm text-outline"
-                      >
-                        <span>92.4k views</span>
-                        <span>•</span>
-                        <span>Tactics</span>
-                      </div>
-                    </div>
-                  </a>
-
-                  <a class="flex items-start gap-space-md group" href="#">
-                    <span
-                      class="font-score-display text-score-display text-primary/30 group-hover:text-primary transition-colors leading-none shrink-0 w-8"
-                      >02</span
-                    >
-                    <div class="flex flex-col gap-1">
-                      <h4
-                        class="font-label-lg text-label-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug"
-                      >
-                        Bayern Munich ultimatum: Alphonso Davies given 10 days
-                        to sign or face benching
-                      </h4>
-                      <div
-                        class="flex items-center gap-space-sm text-body-sm font-body-sm text-outline"
-                      >
-                        <span>78.1k views</span>
-                        <span>•</span>
-                        <span>Transfers</span>
-                      </div>
-                    </div>
-                  </a>
-
-                  <a class="flex items-start gap-space-md group" href="#">
-                    <span
-                      class="font-score-display text-score-display text-primary/30 group-hover:text-primary transition-colors leading-none shrink-0 w-8"
-                      >03</span
-                    >
-                    <div class="flex flex-col gap-1">
-                      <h4
-                        class="font-label-lg text-label-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug"
-                      >
-                        The data behind Cole Palmer: How spatial intelligence
-                        defies simple passing maps
-                      </h4>
-                      <div
-                        class="flex items-center gap-space-sm text-body-sm font-body-sm text-outline"
-                      >
-                        <span>65.0k views</span>
-                        <span>•</span>
-                        <span>Analytics</span>
-                      </div>
-                    </div>
-                  </a>
-
-                  <a class="flex items-start gap-space-md group" href="#">
-                    <span
-                      class="font-score-display text-score-display text-primary/30 group-hover:text-primary transition-colors leading-none shrink-0 w-8"
-                      >04</span
-                    >
-                    <div class="flex flex-col gap-1">
-                      <h4
-                        class="font-label-lg text-label-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug"
-                      >
-                        Ruben Amorim's tactical 3-4-2-1 blueprint evaluated
-                        against Premier League opposition
-                      </h4>
-                      <div
-                        class="flex items-center gap-space-sm text-body-sm font-body-sm text-outline"
-                      >
-                        <span>54.9k views</span>
-                        <span>•</span>
-                        <span>Managerial</span>
-                      </div>
-                    </div>
-                  </a>
-
-                  <a class="flex items-start gap-space-md group" href="#">
-                    <span
-                      class="font-score-display text-score-display text-primary/30 group-hover:text-primary transition-colors leading-none shrink-0 w-8"
-                      >05</span
-                    >
-                    <div class="flex flex-col gap-1">
-                      <h4
-                        class="font-label-lg text-label-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug"
-                      >
-                        Kylian Mbappé’s central striker dilemma: Why Real
-                        Madrid’s pressing shape suffers
-                      </h4>
-                      <div
-                        class="flex items-center gap-space-sm text-body-sm font-body-sm text-outline"
-                      >
-                        <span>49.2k views</span>
-                        <span>•</span>
-                        <span>La Liga</span>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <div
+              {/* <div
                 class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm"
               >
                 <div
@@ -405,7 +276,7 @@ const NewsHomePage = () => {
                     Strictly zero spam. Unsubscribe anytime with one tap.
                   </p>
                 </form>
-              </div>
+              </div> */}
             </aside>
           </div>
         </Container>
