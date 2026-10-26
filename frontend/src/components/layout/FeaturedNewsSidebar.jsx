@@ -59,7 +59,7 @@ function SupportingStoryCard({ story }) {
             {story.category}
           </span>
 
-          <span className="shrink-0 font-jakarta text-xs text-outline">
+          <span className="shrink-0 font-jakarta text-xs text-primary">
             {story.time}
           </span>
         </div>
