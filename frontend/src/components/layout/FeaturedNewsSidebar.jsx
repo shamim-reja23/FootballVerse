@@ -65,7 +65,7 @@ function SupportingStoryCard({ story }) {
         </div>
 
         <Link to={story.slug} className="block">
-          <h2 className="mb-1 font-jakarta text-xl font-bold text-primary transition-colors group-hover:text-live">
+          <h2 className="mb-1 font-jakarta text-xl font-bold text-primary transition-colors group-hover:text-emerald-700">
             {story.title}
           </h2>
         </Link>

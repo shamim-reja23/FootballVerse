@@ -2,6 +2,7 @@ import Container from '@/components/layout/Container'
 import FeaturedNews from '@/components/layout/FeaturedNews'
 import FeaturedNewsSidebar from '@/components/layout/FeaturedNewsSidebar'
 import NewsCategoryBar from '@/components/layout/NewsCategoryBar'
+import TacticalBreakdowns from '@/components/layout/TacticalBreakdown'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 
@@ -23,205 +24,11 @@ const NewsHomePage = () => {
             <FeaturedNewsSidebar/>
           </section>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-            <main class="lg:col-span-8 flex flex-col gap-space-xl">
+            <div class="lg:col-span-8 flex flex-col gap-8">
 
-              <section class="flex flex-col gap-space-md">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-space-xs">
-                    <span class="w-2.5 h-6 bg-primary rounded-full"></span>
-                    <h2
-                      class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight"
-                    >
-                      Tactical Breakdowns
-                    </h2>
-                  </div>
-                  <a
-                    class="font-label-md text-label-md text-primary font-bold flex items-center gap-1 hover:underline"
-                    href="#"
-                  >
-                    View All Tactics
-                    <span class="material-symbols-outlined text-headline-sm"
-                      >arrow_forward</span
-                    >
-                  </a>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
-
-                  <article
-                    class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-all"
-                  >
-                    <div
-                      class="relative h-44 overflow-hidden bg-surface-container"
-                    >
-                      <img
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        data-alt="Tactical chalkboard football pitch diagram with white chalk arrows showing pressing traps, player position numbered dots in green and slate blue on digital green turf grass"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVPwaqhzyBDz5Q8UYNotxyTSSE43OVUY1gxXjwnJDdVdiKgpNRIdixz6ll_ndReRVKiBKgnVkARba2muSfs0-60_nkTrLtzHynd6_FozQk-N-uNsAtNaxd6FX6dLOD2nERP4AVjku8LxgRynv-t1sY3XemDmHShTNYpDAqJ3zB3xx5FJn8rCm5mFU5azTTr24r4F_aEpKRRDV46KpDVoQZhRF6SZqxtc_vxWqzwCB5FIX_rG4FAHd5"
-                      />
-                      <span
-                        class="absolute top-2 left-2 px-2 py-0.5 rounded bg-inverse-surface/90 text-inverse-on-surface font-label-sm text-label-sm font-semibold"
-                      >
-                        Field Geometry
-                      </span>
-
-                      <div
-                        class="absolute bottom-2 right-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded font-label-sm text-label-sm font-bold text-primary flex items-center gap-1"
-                      >
-                        xT: +0.44/90
-                      </div>
-                    </div>
-                    <div
-                      class="p-space-md flex flex-col justify-between flex-1"
-                    >
-                      <div>
-                        <p
-                          class="font-label-sm text-label-sm text-outline uppercase font-bold tracking-wider mb-1"
-                        >
-                          Press Resistance
-                        </p>
-                        <h3
-                          class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-snug mb-2"
-                        >
-                          How Rodri Manipulates Half-Spaces Under Maximum Duress
-                        </h3>
-                        <p
-                          class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2"
-                        >
-                          Examining body shape angles and scanning intervals
-                          that afford the midfielder 1.8 extra seconds on ball
-                          possession.
-                        </p>
-                      </div>
-                      <div
-                        class="flex items-center justify-between pt-space-md mt-space-sm text-body-sm text-outline border-t border-surface-container"
-                      >
-                        <span
-                          class="font-body-sm text-body-sm text-on-surface-variant font-medium"
-                          >Liam Tharme</span
-                        >
-                        <span>7 min</span>
-                      </div>
-                    </div>
-                  </article>
-
-                  <article
-                    class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-all"
-                  >
-                    <div
-                      class="relative h-44 overflow-hidden bg-surface-container"
-                    >
-                      <img
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        data-alt="Football tactics radar chart displaying shot probability, expected threat zones, high press density zones with glowing cyan and emerald vectors on dark pitch"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqWDhHm3MaMT6CxFg6MtfBXoPtqskVCc_YXwYMq6VCOYerWK3bycLlGxWWR5rWE364yR2S0NRSUygzMSRW0KuA8eAoKhO6PVa5Fqk3-WbF2PwceAd6nJ_l_LDLbOt1UF235DhR9Wg5tFUnpHKYSpxiVAKYWz8K7osIQu4_9yaO5bnnHcabeZPvCn6CSzpjuaOM0iz8W4dam3UUCp2nPNb045zF4YleBYJTwcF0_3-inWBnWgfYaPyC"
-                      />
-                      <span
-                        class="absolute top-2 left-2 px-2 py-0.5 rounded bg-inverse-surface/90 text-inverse-on-surface font-label-sm text-label-sm font-semibold"
-                      >
-                        Heatmap Metric
-                      </span>
-                      <div
-                        class="absolute bottom-2 right-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded font-label-sm text-label-sm font-bold text-tertiary flex items-center gap-1"
-                      >
-                        PPDA: 7.2
-                      </div>
-                    </div>
-                    <div
-                      class="p-space-md flex flex-col justify-between flex-1"
-                    >
-                      <div>
-                        <p
-                          class="font-label-sm text-label-sm text-outline uppercase font-bold tracking-wider mb-1"
-                        >
-                          High-Line Risk
-                        </p>
-                        <h3
-                          class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-snug mb-2"
-                        >
-                          Ange Postecoglou's Offside Trap: Mathematical Gamble
-                          or Calculated System?
-                        </h3>
-                        <p
-                          class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2"
-                        >
-                          Breaking down Tottenham's 48-meter defensive line
-                          against rapid transition forwards with high expected
-                          goals against.
-                        </p>
-                      </div>
-                      <div
-                        class="flex items-center justify-between pt-space-md mt-space-sm text-body-sm text-outline border-t border-surface-container"
-                      >
-                        <span
-                          class="font-body-sm text-body-sm text-on-surface-variant font-medium"
-                          >Mark Carey</span
-                        >
-                        <span>5 min</span>
-                      </div>
-                    </div>
-                  </article>
-
-                  <article
-                    class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-all"
-                  >
-                    <div
-                      class="relative h-44 overflow-hidden bg-surface-container"
-                    >
-                      <img
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        data-alt="Football analytical wireframe showing 3D ball trajectory into penalty box with goal mouth probability cone and player defensive blocks mapped"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJu2962LzRk7vFuswR7-3LZEBH5MGvVTsRj8txX4_jBCekMBXkhEF3bBuFKQ7rIyRaEqrxpWpyqMXkiD7IL1x2elYZFXMvS0pKLoMF0fQqs8D2ftZQfZdyjNMrRlveLfT-4f6iA0nmfhDV-8m25XoGFb1B5I5lrlCMi3lSQM0bfOTXX_M8lHXScQ7pc3N6nOulJK6AfLbciVWi1QJqXz25UCTKt6E0xWjrJA7Djj8_XE7CSYIKsgLz"
-                      />
-                      <span
-                        class="absolute top-2 left-2 px-2 py-0.5 rounded bg-inverse-surface/90 text-inverse-on-surface font-label-sm text-label-sm font-semibold"
-                      >
-                        Set Piece Routine
-                      </span>
-                      <div
-                        class="absolute bottom-2 right-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded font-label-sm text-label-sm font-bold text-primary flex items-center gap-1"
-                      >
-                        xG/Corner: 0.14
-                      </div>
-                    </div>
-                    <div
-                      class="p-space-md flex flex-col justify-between flex-1"
-                    >
-                      <div>
-                        <p
-                          class="font-label-sm text-label-sm text-outline uppercase font-bold tracking-wider mb-1"
-                        >
-                          Set-Piece Design
-                        </p>
-                        <h3
-                          class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-snug mb-2"
-                        >
-                          Nicolas Jover’s Inswinging Corner Philosophy at
-                          Arsenal
-                        </h3>
-                        <p
-                          class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2"
-                        >
-                          How zonal screen blocks on opposing goalkeepers
-                          engineered 16 league goals from dead-ball scenarios
-                          this campaign.
-                        </p>
-                      </div>
-                      <div
-                        class="flex items-center justify-between pt-space-md mt-space-sm text-body-sm text-outline border-t border-surface-container"
-                      >
-                        <span
-                          class="font-body-sm text-body-sm text-on-surface-variant font-medium"
-                          >Sam Tighe</span
-                        >
-                        <span>6 min</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </section>
+              <TacticalBreakdowns/>
 
               <section class="flex flex-col gap-space-md">
                 <div class="flex items-center justify-between">
@@ -671,7 +478,7 @@ const NewsHomePage = () => {
                   </div>
                 </div>
               </section>
-            </main>
+            </div>
 
             <aside class="lg:col-span-4 flex flex-col gap-space-lg">
 
