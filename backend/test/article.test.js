@@ -15,13 +15,15 @@ const testArticle = async () => {
       content: "This is test content for the FootballVerse Article model.",
       category: "Tactical Analysis",
       author: "Test Author",
+      status: "published",
+      publishedAt: new Date("2026-10-27"),
     });
 
     console.log("Article created successfully:");
     console.log(article);
 
-    await Article.deleteOne({ _id: article._id });
-    console.log("Test article deleted successfully.");
+    // await Article.deleteOne({ _id: article._id });
+    // console.log("Test article deleted successfully.");
   } catch (error) {
     console.error("Article model test failed:", error);
   } finally {

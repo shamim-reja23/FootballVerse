@@ -15,3 +15,28 @@ export const getPublishedArticles = async(req, res) => {
         })
     }
 }
+
+export const getPublishedArticleBySlug = async(req, res) => {
+    try {
+        const slug = req.params.slug
+        const article = await Article.findOne({ slug, status: "published" })
+
+        if(!article){
+            return res.status(404).json({
+                success: false,
+                message: "Article not found."
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            article
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Failed to fetch published article."
+        })
+    }
+}
