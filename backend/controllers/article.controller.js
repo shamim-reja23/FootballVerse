@@ -40,3 +40,22 @@ export const getPublishedArticleBySlug = async(req, res) => {
         })
     }
 }
+
+export const getPublishedArticlesByCategory = async(req, res) => {
+    try {
+        const category = req.params.category;
+        const articles = await Article.find({ category, status: "published"}).sort({ publishedAt: -1 });
+
+
+        return res.status(200).json({
+            success: true,
+            articles
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Failed to fetch published article."
+        })
+    }
+}
